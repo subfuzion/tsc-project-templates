@@ -1,0 +1,32 @@
+{
+  "name": "cloudpong",
+  "version": "0.0.0",
+  "description": "Demo serverless multi-player pong with Cloud Run and Redis",
+  "main": "dist/src/index.js",
+  "type": "module",
+  "scripts": {
+    "clean": "npx -y rimraf src/**/*.d.ts .tsbuildinfo",
+    "✅ BUILD ⬇": ":",
+    "tsc": "tsc",
+    "build": "npm run tsc",
+    "watch-build": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"npm run test\"",
+    "prewatch": "npm run clean",
+    "watch": "tsc-watch -p ./tsconfig.json --onSuccess \"npm start\"",
+    "✅ TEST ⬇": ":",
+    "test": "node test/test.js",
+    "prewatch-test": "npm run clean",
+    "watch-test": "npx -y chokidar-cli \"test/**/*.js\" -c \"npm run test\"",
+    "✅ DEV ⬇": ":",
+    "predev": "npm run clean",
+    "dev": "NODE_ENV=development npx -y concurrently \"npm run watch-build\" \"npm run watch-test\"",
+    "✅ PRODUCTION ⬇": ":",
+    "start": "node ./src/index.js"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.8.2"
+  }
+}

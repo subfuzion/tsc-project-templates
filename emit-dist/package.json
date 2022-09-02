@@ -1,0 +1,33 @@
+{
+  "name": "emit-dist",
+  "version": "0.0.0",
+  "description": "Compile JavaScript + TypeScript, output to dist",
+  "license": "Apache-2.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "clean": "npx -y rimraf src/**/*.d.ts dist/ .tsbuildinfo",
+    "✅ BUILD ⬇": ":",
+    "tsc": "tsc",
+    "prebuild": "npm run clean",
+    "build": "npm run tsc",
+    "watch-build": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"npm run test\"",
+    "prewatch": "npm run clean",
+    "watch": "tsc-watch -p ./tsconfig.json --onSuccess \"npm start\"",
+    "✅ TEST ⬇": ":",
+    "test": "npx ts-node --esm test/test.js",
+    "prewatch-test": "npm run clean",
+    "watch-test": "npx -y chokidar-cli \"test/**/*.js\" -c \"npm run test\"",
+    "✅ DEV ⬇": ":",
+    "predev": "npm run clean",
+    "dev": "NODE_ENV=development npx -y concurrently \"npm run watch-build\" \"npm run watch-test\"",
+    "✅ PRODUCTION ⬇": ":",
+    "start": "node ./dist/src/index.js"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^18.7.14",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.8.2"
+  }
+}

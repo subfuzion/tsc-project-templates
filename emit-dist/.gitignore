@@ -1,0 +1,5 @@
+.tsbuildinfo
+node_modules/
+
+# Uncomment if you don't want to commit dist.
+# dist/

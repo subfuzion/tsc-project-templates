@@ -1,0 +1,134 @@
+{
+  // https://www.typescriptlang.org/tsconfig
+  "compilerOptions": {
+    "disableSizeLimit": true,  // https://www.typescriptlang.org/tsconfig#Editor_Support_6249
+
+    /* Projects - https://www.typescriptlang.org/tsconfig#Projects_6255 */
+    "composite": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo",
+    "disableSolutionSearching": false,
+    "disableReferencedProjectLoad": false,
+
+
+    /* Language and Environment - https://www.typescriptlang.org/tsconfig#Language_and_Environment_6254 */
+    "target": "es2015",
+    "lib": [],
+    "moduleDetection": "auto",
+    "useDefineForClassFields": true,  // https://www.typescriptlang.org/tsconfig#useDefineForClassFields
+
+
+    /* Modules - https://www.typescriptlang.org/tsconfig#Modules_6244 */
+    "types": ["node"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "paths": {},  // Relative to baseUrl, specify a set of entries that re-map imports to additional lookup locations. */
+
+
+    /* JavaScript Support - https://www.typescriptlang.org/tsconfig#JavaScript_Support_6247 */
+    "allowJs": true,
+    "checkJs": true,
+    "maxNodeModuleJsDepth": 0, // applies to node_modules
+
+
+    /* Emit - https://www.typescriptlang.org/tsconfig#Emit_6246 */
+    // "outDir": "./dist",
+    "declaration": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "emitDeclarationOnly": true,
+    // "declarationDir": "./types",
+    "sourceMap": false,
+    "declarationMap": false, // Generate sourcemaps for d.ts files
+    "removeComments": true,
+    "stripInternal": true, // Disable emitting declarations that have '@internal' in their JSDoc comments.
+    "importHelpers": false, // Allow importing helper functions from tslib once per project, instead of including them per-file.
+    "importsNotUsedAsValues": "remove", // Specify emit/checking behavior for imports that are only used for types.
+    "preserveValueImports": true, // Preserve unused imported values in the JavaScript output that would otherwise be removed.
+    "downlevelIteration": true, // Emit more compliant, but verbose and less performant JavaScript for iteration.
+    // "sourceRoot": "", // Specify the root path for debuggers to find the reference source code.
+    // "mapRoot": "", // Specify the location where debugger should locate map files instead of generated locations.
+    // "inlineSourceMap": true, // Include sourcemap files inside the emitted JavaScript.
+    // "inlineSources": true, // Include source code in the sourcemaps inside the emitted JavaScript.
+    // "noEmitHelpers": true, // Disable generating custom helper functions like '__extends' in compiled output.
+    // "preserveConstEnums": true, // Disable erasing 'const enum' declarations in generated code.
+
+
+    /* Interop Constraints - https://www.typescriptlang.org/tsconfig#Interop_Constraints_6252 */
+    // "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+
+    /* Type Checking - https://www.typescriptlang.org/tsconfig#Type_Checking_6248 */
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+
+
+    /* Completeness - https://www.typescriptlang.org/tsconfig#Completeness_6257 */
+    "skipLibCheck": false,
+
+
+    /* Output Formatting - https://www.typescriptlang.org/tsconfig#Output_Formatting_6256 */
+    "noErrorTruncation": true,
+    "preserveWatchOutput": false,
+    "pretty": true,
+
+
+    /* Watch Options - https://www.typescriptlang.org/tsconfig#Watch_and_Build_Modes_6250 */
+    "assumeChangesOnlyAffectDirectDependencies": true,
+
+
+  }, // compilerOptions
+
+
+  "typeAcquisition": {
+    "enable": true,  // https://www.typescriptlang.org/tsconfig#type-enable
+    "include": [],   // https://www.typescriptlang.org/tsconfig#type-include
+    "exclude": ["jest", "mocha"],  // https://www.typescriptlang.org/tsconfig#type-exclude
+    "disableFilenameBasedTypeAcquisition": false,  // https://www.typescriptlang.org/tsconfig#type-disableFilenameBasedTypeAcquisition
+  },
+
+
+  // "files": [],  // https://www.typescriptlang.org/tsconfig#files; use "include" below for file globbing instead.
+  "include": [
+    "src/**/*.js",
+  ],
+  "exclude": [
+    "**/*.d.ts",
+    ".tsbuildinfo",
+    "test/**/*",
+  ],
+
+
+  "watchOptions": {
+    "watchDirectory": "useFsEvents",
+    "excludeFiles": [
+      "**/*.d.ts",
+    ],
+    "excludeDirectories": [
+      ".git",
+      "**/node_modules",
+    ]
+  }
+}
